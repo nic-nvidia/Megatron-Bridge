@@ -590,6 +590,8 @@ class AutoBridge(Generic[MegatronModelT]):
         hf_tokenizer_path: Optional[str | Path] = None,
         low_memory_save: bool = False,
         hf_tokenizer_kwargs: Optional[dict] = None,
+        fully_parallel_save: bool = True,
+        validate_access_integrity: bool = True,
     ) -> None:
         """
         Save a Megatron model in native Megatron checkpoint format without optimizer
@@ -648,6 +650,8 @@ class AutoBridge(Generic[MegatronModelT]):
             hf_tokenizer_path=hf_tokenizer_path,
             low_memory_save=low_memory_save,
             hf_tokenizer_kwargs=hf_tokenizer_kwargs,
+            fully_parallel_save=fully_parallel_save,
+            validate_access_integrity=validate_access_integrity,
         )
 
     def load_megatron_model(
